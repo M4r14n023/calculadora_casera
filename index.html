@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Casera</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <!-- Botón para abrir/cerrar la calculadora -->
+     <button id="toggleCalculator" class="btn btn-secondary mb-3">Abrir Calculadora</button>
+
+        <div class="simple-calculator card">
+        <h5 class="card-header">Calculadora Simple</h5>
+        <div class="card-body">
+            <input type="text" id="calcInput" class="form-control mb-2" placeholder="0" readonly>
+    
+            <!-- Botones de números en 3 filas -->
+            <div class="button-grid">
+                <button onclick="appendCalc('1')">1</button>
+                <button onclick="appendCalc('2')">2</button>
+                <button onclick="appendCalc('3')">3</button>
+                <button onclick="appendCalc('4')">4</button>
+                <button onclick="appendCalc('5')">5</button>
+                <button onclick="appendCalc('6')">6</button>
+                <button onclick="appendCalc('7')">7</button>
+                <button onclick="appendCalc('8')">8</button>
+                <button onclick="appendCalc('9')">9</button>
+                <button onclick="appendCalc('0')">0</button>
+                <button onclick="appendCalc('.')">.</button>
+                <button onclick="clearCalc()">C</button>
+            </div>
+    
+            <!-- Botones de operaciones en una fila -->
+            <div class="operations">
+                <button onclick="appendCalc('+')">+</button>
+                <button onclick="appendCalc('-')">-</button>
+                <button onclick="appendCalc('*')">*</button>
+                <button onclick="appendCalc('/')">/</button>
+                <button onclick="calculate()">=</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contenedor principal -->
+    <div class="container mt-5">
+        <h1 class="text-center">Calculadora Casera</h1>
+
+        <!-- Formulario de Reintegro -->
+        <div class="card p-4 my-4">
+            <h4>Reintegro</h4>
+            <form id="reintegroForm">
+                <div class="mb-3">
+                    <label for="empresa" class="form-label">Empresa</label>
+                    <input type="text" class="form-control" id="empresa" required>
+                </div>
+                <div class="mb-3">
+                    <label for="porcentaje" class="form-label">Porcentaje (%)</label>
+                    <input type="number" class="form-control" id="porcentaje" required>
+                </div>
+                <div class="mb-3">
+                    <label for="tope" class="form-label">Tope de reintegro ($)</label>
+                    <input type="number" class="form-control" id="tope" required>
+                </div>
+                <div class="mb-3">
+                    <label for="periodo" class="form-label">Periodo</label>
+                    <select class="form-select" id="periodo" required>
+                        <option value="semanal">Semanal</option>
+                        <option value="mensual">Mensual</option>
+                        <option value="unica">Única vez</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Calcular Reintegro</button>
+                <button type="button" class="btn btn-secondary w-100 mt-2" onclick="clearForm('reintegroForm')">Limpiar</button>
+            </form>
+        </div>
+
+        <!-- Formulario de Combustible -->
+        <div class="card p-4 my-4">
+            <h4>Gasto de Combustible</h4>
+            <form id="combustibleForm">
+                <div class="mb-3">
+                    <label for="valorLitro" class="form-label">Valor del Litro ($)</label>
+                    <input type="number" class="form-control" id="valorLitro" required>
+                </div>
+                <div class="mb-3">
+                    <label for="kilometros" class="form-label">Kilómetros a recorrer</label>
+                    <input type="number" class="form-control" id="kilometros" required>
+                </div>
+                <div class="mb-3">
+                    <label for="consumo" class="form-label">Consumo cada 100 km</label>
+                    <input type="number" class="form-control" id="consumo" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Calcular Combustible</button>
+                <button type="button" class="btn btn-secondary w-100 mt-2" onclick="clearForm('combustibleForm')">Limpiar</button>
+            </form>
+        </div>
+
+        <!-- Lista de cálculos -->
+        <div class="card p-4 my-4">
+            <h4>Historial de Cálculos</h4>
+            <ul id="calculoList" class="list-group">
+                <!-- Resultados aparecerán aquí -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

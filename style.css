@@ -1,0 +1,98 @@
+/* Estilo de la calculadora simple */
+.simple-calculator {
+    width: 320px;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el visor */
+.simple-calculator #calcInput {
+    font-size: 20px;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 1px solid #a0102a;
+}
+
+/* Disposición de los botones en 3 filas de números y una fila de operaciones */
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas para los números */
+    gap: 5px;
+}
+
+.button-grid button {
+    padding: 8px;
+    font-size: 16px;
+    color: white;
+    background-color: #1065ba;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button-grid button:hover {
+    font-size: 16px;
+    color: #1065ba;
+    background-color: white;
+}
+
+/* Botones de operaciones en una fila */
+.operations {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.operations button {
+    padding: 8px;
+    flex: 1;
+    font-size: 16px;
+    color: white;
+    background-color: #086934;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 2px;
+}
+
+.operations button:last-child {
+    margin-right: 0;
+}
+
+.operations button:hover {
+    font-size: 16px;
+    color: #086934;
+    background-color: white;
+}
+
+
+/* Estilo general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+.container h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.card-header {
+    font-weight: bold;
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+}
+
